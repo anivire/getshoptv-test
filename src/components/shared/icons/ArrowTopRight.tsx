@@ -6,7 +6,7 @@ export default function ArrowTopRight() {
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="block w-10"
+      className="h-[24px] md:w-[24px] lg:h-[32px] lg:w-[32px]"
     >
       <circle cx="16" cy="16" r="12" fill="#FF5900" />
       <path

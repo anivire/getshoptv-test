@@ -5,8 +5,8 @@ export default function MonetizationToggle() {
   const [selectedButton, setSelectedButton] = useState<number>(0);
 
   return (
-    <section className="mx-auto grid w-full max-w-[1220px] grid-cols-2 justify-between">
-      <h2 className="text-heading-base max-w-md font-bold">
+    <section className="mx-auto grid w-full max-w-[1220px] grid-cols-2 justify-between md:px-3 lg:px-0">
+      <h2 className="text-heading-base font-bold md:max-w-64 lg:max-w-md">
         Дополнительные источники выручки для разных компаний
       </h2>
       <div className="flex flex-col gap-[32px]">

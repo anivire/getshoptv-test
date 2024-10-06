@@ -3,14 +3,14 @@ import ButtonBlack from './shared/buttons/ButtonBlack';
 
 export default function FeedbackForm() {
   return (
-    <section className="mx-auto flex w-full max-w-[1220px] flex-col gap-[64px] pb-[80px]">
+    <section className="mx-auto flex w-full max-w-[1220px] flex-col pb-[80px] md:gap-[32px] md:px-3 lg:gap-[64px] lg:px-0">
       <h2 className="text-heading-base font-bold">Заполните форму</h2>
-      <div className="flex w-full flex-row gap-[40px]">
+      <div className="flex w-full gap-[40px] md:flex-col lg:flex-row">
         <textarea
           placeholder="Напишите свой вопрос"
           className="outline-slate-gray h-[216px] w-full resize-none rounded-[12px] bg-transparent p-3 outline outline-2 transition-all duration-300 ease-in-out focus:outline-black"
         />
-        <div className="flex flex-col gap-[48px]">
+        <div className="flex flex-col md:gap-[64px] lg:gap-[48px]">
           <div className="flex flex-col gap-[32px]">
             <input
               placeholder="Введите e-mail"
@@ -30,7 +30,9 @@ export default function FeedbackForm() {
               </p>
             </div>
           </div>
-          <ButtonBlack text="Отправить" onClick={() => {}} />
+          <div className="w-full">
+            <ButtonBlack text="Отправить" onClick={() => {}} />
+          </div>
         </div>
       </div>
     </section>

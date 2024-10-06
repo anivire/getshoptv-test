@@ -4,13 +4,13 @@ import LogoIcon from './shared/icons/LogoIcon';
 export default function RevenueOptimization() {
   return (
     <section className="relative">
-      <div className="bg-frost-gray absolute inset-0 -z-10 h-[647px] w-full self-center" />
-      <div className="relative mx-auto flex w-full max-w-[1220px] flex-col gap-[80px]">
-        <h2 className="text-heading-base text-center font-bold">
+      <div className="bg-frost-gray absolute inset-0 -z-10 w-full self-center md:h-[471px] lg:h-[647px]" />
+      <div className="relative mx-auto flex w-full max-w-[1220px] flex-col md:items-center md:gap-[60px] lg:items-baseline lg:gap-[80px]">
+        <h2 className="text-heading-base text-center font-bold md:max-w-lg lg:max-w-full">
           Баланс между выручкой и удовлетворённостью пользователей
         </h2>
         <div className="flex w-full flex-row">
-          <div className="flex w-[300px] flex-col gap-[16px] p-[32px]">
+          <div className="flex flex-col gap-[16px] md:w-[216px] md:p-[24px] lg:w-[300px] lg:p-[32px]">
             <ArrowTopRight />
             <h3 className="text-heading-md font-bold">
               Частотность под контролем
@@ -23,12 +23,17 @@ export default function RevenueOptimization() {
             <div className="bg-accent relative h-0.5 w-full">
               <div className="bg-accent absolute inset-y-0 left-0 h-3 w-3 self-center rounded-full" />
               <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 transform self-center">
-                <LogoIcon />
+                <span className="hidden lg:block">
+                  <LogoIcon />
+                </span>
+                <span className="block lg:hidden">
+                  <LogoIcon size={80} />
+                </span>
               </div>
               <div className="bg-accent absolute inset-y-0 right-0 h-3 w-3 self-center rounded-full" />
             </div>
           </div>
-          <div className="flex w-[300px] flex-col gap-[16px] p-[32px]">
+          <div className="flex flex-col gap-[16px] md:w-[216px] md:p-[24px] lg:w-[300px] lg:p-[32px]">
             <ArrowTopRight />
             <h3 className="text-heading-md font-bold">Максимальная выручка</h3>
             <p className="text-body-base">

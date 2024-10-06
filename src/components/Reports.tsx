@@ -5,11 +5,11 @@ import ArrowTopRight from './shared/icons/ArrowTopRight';
 export default function Reports() {
   return (
     <section className="relative">
-      <div className="bg-frost-gray absolute inset-0 -z-10 h-[647px] w-full self-center" />
+      <div className="bg-frost-gray absolute inset-0 -z-10 w-full self-center md:h-[471px] lg:h-[647px]" />
 
-      <div className="relative mx-auto flex w-full max-w-[1220px] flex-col gap-[80px]">
-        <div className="flex max-w-[497px] flex-col gap-[32px]">
-          <h2 className="text-heading-base font-bold">
+      <div className="relative mx-auto flex w-full max-w-[1220px] flex-col overflow-hidden md:gap-[32px] md:px-3 lg:gap-[80px] lg:px-0">
+        <div className="flex max-w-[320px] flex-col gap-[32px] lg:max-w-[497px]">
+          <h2 className="text-heading-base text-balance font-bold">
             Подробные отчёты для вас и правообладателей
           </h2>
           <div className="flex flex-col gap-[20px]">
@@ -28,13 +28,16 @@ export default function Reports() {
             ))}
           </div>
         </div>
-        <ButtonBlack text="Заказать звонок" onClick={() => {}} />
+        {/* ToDo: add className prop for black button to handle button width */}
+        <div className="max-w-[210px]">
+          <ButtonBlack text="Заказать звонок" onClick={() => {}} />
+        </div>
         <Image
           src={'/images/reports.png'}
           alt="Reports dashboard"
           width={631}
           height={482}
-          className="iset-0 absolute right-0"
+          className="absolute md:-right-16 md:w-[399px] lg:right-0 lg:w-[482px]"
         />
       </div>
     </section>

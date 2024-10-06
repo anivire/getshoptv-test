@@ -1,14 +1,14 @@
 import { FC } from 'react';
 
 interface Props {
-  isSmall?: boolean;
+  size?: number;
 }
 
-const LogoIcon: FC<Props> = ({ isSmall }) => {
+const LogoIcon: FC<Props> = ({ size }) => {
   return (
     <svg
-      width={!isSmall ? '120' : '55'}
-      height={!isSmall ? '120' : '55'}
+      width={!size ? '120' : size}
+      height={!size ? '120' : size}
       viewBox="0 0 120 120"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

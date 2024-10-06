@@ -7,7 +7,7 @@ import RevenueOptimization from '@/components/RevenueOptimization';
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-[180px]">
+    <main className="flex flex-col md:gap-[120px] lg:gap-[180px]">
       <Hero />
       <MonetizationToggle />
       <RevenueOptimization />
