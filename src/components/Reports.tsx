@@ -5,7 +5,7 @@ import ArrowTopRight from './shared/icons/ArrowTopRight';
 export default function Reports() {
   return (
     <section className="relative">
-      <div className="absolute inset-0 -z-10 h-[647px] w-full self-center bg-gray-04" />
+      <div className="bg-frost-gray absolute inset-0 -z-10 h-[647px] w-full self-center" />
 
       <div className="relative mx-auto flex w-full max-w-[1220px] flex-col gap-[80px]">
         <div className="flex max-w-[497px] flex-col gap-[32px]">

@@ -25,14 +25,14 @@ const ToggleButton: FC<Props> = ({
   };
 
   return (
-    <div className="group-[toggle] flex w-full flex-row overflow-hidden rounded-[14px] bg-gray-04 p-[4px]">
+    <div className="group-[toggle] bg-frost-gray flex w-full flex-row overflow-hidden rounded-[14px] p-[4px]">
       <button
         onClick={() => handleSelectedButton()}
         className={classNames(
           'text-heading-md w-full rounded-[10px] px-[37px] py-[10px] font-bold transition-colors duration-200 ease-in-out',
           {
             'bg-black text-white': selectedButton === 0,
-            'bg-transparent text-gray-01 group-[toggle]:hover:text-white':
+            'text-slate-gray bg-transparent group-[toggle]:hover:text-white':
               selectedButton !== 0,
           }
         )}
@@ -45,7 +45,7 @@ const ToggleButton: FC<Props> = ({
           'text-heading-md w-full rounded-[10px] px-[37px] py-[10px] font-bold transition-colors duration-200 ease-in-out',
           {
             'bg-black text-white': selectedButton === 1,
-            'bg-transparent text-gray-01 group-[toggle]:hover:text-white':
+            'text-slate-gray bg-transparent group-[toggle]:hover:text-white':
               selectedButton !== 1,
           }
         )}

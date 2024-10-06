@@ -8,13 +8,13 @@ export default function FeedbackForm() {
       <div className="flex w-full flex-row gap-[40px]">
         <textarea
           placeholder="Напишите свой вопрос"
-          className="h-[216px] w-full resize-none rounded-[12px] bg-transparent p-3 outline outline-2 outline-gray-01 transition-all duration-300 ease-in-out focus:outline-black"
+          className="outline-slate-gray h-[216px] w-full resize-none rounded-[12px] bg-transparent p-3 outline outline-2 transition-all duration-300 ease-in-out focus:outline-black"
         />
         <div className="flex flex-col gap-[48px]">
           <div className="flex flex-col gap-[32px]">
             <input
               placeholder="Введите e-mail"
-              className="w-full border-b-2 border-gray-01 bg-transparent py-3 outline-none transition-all duration-300 ease-in-out focus:border-black"
+              className="border-slate-gray w-full border-b-2 bg-transparent py-3 outline-none transition-all duration-300 ease-in-out focus:border-black"
             />
             <div className="">
               <p className="text-body-md">

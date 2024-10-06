@@ -12,19 +12,15 @@ const config: Config = {
       colors: {
         black: '#1D1D1B',
         white: '#FFFFFF',
-        'gray-01': '#A4ADAC',
-        'gray-02': '#D6DBDB',
-        'gray-03': '#E8EDEE',
-        'gray-04': '#F2F6F6',
-        orange: '#FF5900',
-        'dark-orange': '#E0570E',
-        error: '#FF4026',
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
 
-        'header-nav-default': '#1D1D1B',
-        'header-nav-hover': '#FF5900',
-        'header-nav-active': '#FF5900',
+        accent: '#FF5900',
+        'dark-accent': '#E0570E',
+        error: '#FF4026',
+
+        'slate-gray': '#A4ADAC',
+        'cloud-gray': '#D6DBDB',
+        'mist-gray': '#E8EDEE',
+        'frost-gray': '#F2F6F6',
       },
 
       fontSize: {
