@@ -4,11 +4,11 @@ interface Props {
   size?: number;
 }
 
-const LogoIcon: FC<Props> = ({ size }) => {
+const LogoIcon: FC<Props> = ({ size = '120' }) => {
   return (
     <svg
-      width={!size ? '120' : size}
-      height={!size ? '120' : size}
+      width={size}
+      height={size}
       viewBox="0 0 120 120"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -49,7 +49,7 @@ export default function RevenueOptimization() {
 
   return (
     <section id="work" ref={sectionRef} className="relative">
-      <div className="absolute inset-0 -z-10 w-full self-center bg-frost-gray md:h-[471px] lg:h-[647px]" />
+      <div className="absolute inset-0 top-1/2 -z-10 w-full -translate-y-1/2 transform bg-frost-gray md:h-[471px] lg:h-[647px]" />
       <div className="relative mx-auto flex w-full max-w-[1220px] flex-col px-[16px] md:items-center md:gap-[60px] md:px-[40px] lg:items-center lg:gap-[80px] lg:px-0">
         <h2 className="text-heading-base font-bold md:max-w-lg md:text-center lg:max-w-full">
           Баланс между выручкой и удовлетворённостью пользователей
@@ -65,14 +65,20 @@ export default function RevenueOptimization() {
             </p>
           </div>
           <div className="grid grow grid-cols-1 place-items-center">
-            <div className="relative h-[175px] w-0.5 bg-accent md:h-0.5 md:w-full">
-              <div className="absolute -inset-x-[5px] h-3 w-3 self-center rounded-full bg-accent md:inset-x-auto md:inset-y-0 md:left-0" />
-              <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 transform self-center">
+            <div className="relative flex h-[175px] w-0.5 flex-row bg-accent md:h-0.5 md:w-full">
+              {/* Верхний круг */}
+              <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 transform rounded-full bg-accent md:left-0 md:top-1/2 md:-translate-y-1/2" />
+
+              {/* Логотип */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
                 {isDesktop ? <LogoIcon /> : <LogoIcon size={80} />}
               </div>
-              <div className="absolute -inset-x-[5px] bottom-0 h-3 w-3 self-center rounded-full bg-accent md:inset-x-auto md:inset-y-0 md:right-0" />
+
+              {/* Нижний круг */}
+              <div className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 transform rounded-full bg-accent md:left-full md:right-0 md:top-1/2 md:-translate-y-1/2" />
             </div>
           </div>
+
           <div className="flex flex-col gap-[16px] p-[24px] md:w-[216px] lg:w-[300px] lg:p-[32px]">
             <ArrowTopRight />
             <h3 className="text-heading-md font-bold">Максимальная выручка</h3>

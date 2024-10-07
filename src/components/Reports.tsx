@@ -6,7 +6,7 @@ export default function Reports() {
   return (
     <>
       <section className="relative">
-        <div className="absolute inset-0 -z-10 w-full self-center bg-frost-gray md:h-[471px] lg:h-[647px]" />
+        <div className="absolute inset-0 top-1/2 -z-10 w-full -translate-y-1/2 transform bg-frost-gray md:h-[471px] lg:h-[647px]" />
 
         <div className="relative mx-auto flex w-full max-w-[1220px] flex-col gap-[32px] overflow-hidden px-[16px] md:px-[40px] lg:gap-[80px] lg:px-0">
           <div className="flex max-w-[320px] flex-col gap-[32px] lg:max-w-[497px]">
