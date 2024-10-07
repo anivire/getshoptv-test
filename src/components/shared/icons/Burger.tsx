@@ -1,8 +1,14 @@
-export default function Burger() {
+import { FC } from 'react';
+
+interface Props {
+  size?: number;
+}
+
+const Burger: FC<Props> = ({ size }) => {
   return (
     <svg
-      width="44"
-      height="44"
+      width={!size ? '44' : size}
+      height={!size ? '44' : size}
       viewBox="0 0 44 44"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -36,4 +42,6 @@ export default function Burger() {
       />
     </svg>
   );
-}
+};
+
+export default Burger;

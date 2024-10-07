@@ -5,11 +5,11 @@ import ArrowTopRight from './shared/icons/ArrowTopRight';
 export default function Reports() {
   return (
     <section className="relative">
-      <div className="bg-frost-gray absolute inset-0 -z-10 w-full self-center md:h-[471px] lg:h-[647px]" />
+      <div className="absolute inset-0 -z-10 w-full self-center bg-frost-gray md:h-[471px] lg:h-[647px]" />
 
-      <div className="relative mx-auto flex w-full max-w-[1220px] flex-col overflow-hidden md:gap-[32px] md:px-3 lg:gap-[80px] lg:px-0">
+      <div className="relative mx-auto flex w-full max-w-[1220px] flex-col overflow-hidden md:gap-[32px] md:px-[40px] lg:gap-[80px] lg:px-0">
         <div className="flex max-w-[320px] flex-col gap-[32px] lg:max-w-[497px]">
-          <h2 className="text-heading-base text-balance font-bold">
+          <h2 className="text-balance text-heading-base font-bold">
             Подробные отчёты для вас и правообладателей
           </h2>
           <div className="flex flex-col gap-[20px]">
@@ -20,7 +20,7 @@ export default function Reports() {
             ].map((text, index) => (
               <div
                 key={index}
-                className="text-body-lg grid grid-cols-10 items-start gap-[16px]"
+                className="grid grid-cols-10 items-start gap-[16px] text-body-lg"
               >
                 <ArrowTopRight />
                 <p className="col-span-9 w-fit">{text}</p>

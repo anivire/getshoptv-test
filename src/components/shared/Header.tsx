@@ -9,19 +9,19 @@ export default function Header() {
   const { query } = router;
 
   return (
-    <header className="mx-auto flex max-w-[1220px] flex-row items-center justify-between py-7 md:px-3 lg:px-0">
+    <header className="mx-auto flex max-w-[1220px] flex-row items-center justify-between px-[16px] py-7 md:px-[40px] lg:px-0">
       {!query.withLogo ? <Logo /> : <LogoIcon size={55} />}
 
       <div className="inline-flex items-center md:hidden lg:block">
         <Link
           href="/"
-          className="text-button-base hover:text-accent active:text-accent px-8 py-[10px] text-black active:underline"
+          className="px-8 py-[10px] text-button-base text-black hover:text-accent active:text-accent active:underline"
         >
           Преимущества
         </Link>
         <Link
           href="/"
-          className="text-button-base hover:text-accent active:text-accent px-8 py-[10px] text-black active:underline"
+          className="px-8 py-[10px] text-button-base text-black hover:text-accent active:text-accent active:underline"
         >
           Как работаем
         </Link>
