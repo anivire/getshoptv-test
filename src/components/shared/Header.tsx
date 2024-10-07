@@ -12,7 +12,7 @@ export default function Header() {
     <header className="mx-auto flex max-w-[1220px] flex-row items-center justify-between px-[16px] py-7 md:px-[40px] lg:px-0">
       {!query.withLogo ? <Logo /> : <LogoIcon size={55} />}
 
-      <div className="inline-flex items-center md:hidden lg:block">
+      <div className="hidden items-center lg:inline-flex">
         <Link
           href="/"
           className="px-8 py-[10px] text-button-base text-black hover:text-accent active:text-accent active:underline"
