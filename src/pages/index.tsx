@@ -7,13 +7,13 @@ import RevenueOptimization from '@/components/RevenueOptimization';
 
 export default function Home() {
   return (
-    <main className="flex flex-col md:gap-[120px] lg:gap-[180px]">
+    <main className="flex flex-col gap-[80px] md:gap-[120px] lg:gap-[180px]">
       <Hero />
       <MonetizationToggle />
-      <RevenueOptimization />
-      <Partners />
-      <Reports />
-      <FeedbackForm />
+      {/* <RevenueOptimization /> */}
+      {/* <Partners /> */}
+      {/* <Reports /> */}
+      {/* <FeedbackForm /> */}
     </main>
   );
 }

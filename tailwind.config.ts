@@ -86,19 +86,19 @@ const config: Config = {
           '--letter-spacing-heading-lg': '-4%',
 
           '--font-size-heading-base': '24px',
-          '--line-height-heading-base': '100%',
+          '--line-height-heading-base': 'auto',
           '--letter-spacing-heading-base': '0%',
 
           '--font-size-heading-md': '20px',
-          '--line-height-heading-md': '100%',
+          '--line-height-heading-md': 'auto',
           '--letter-spacing-heading-md': '0%',
 
           '--font-size-body-lg': '16px',
-          '--line-height-body-lg': '100%',
+          '--line-height-body-lg': 'auto%',
           '--letter-spacing-body-lg': '0%',
 
           '--font-size-body-base': '14px',
-          '--line-height-body-base': '100%',
+          '--line-height-body-base': 'auto',
           '--letter-spacing-body-base': '0%',
         },
         /* Tablet */
@@ -113,7 +113,7 @@ const config: Config = {
             '--letter-spacing-heading-base': '0%',
 
             '--font-size-heading-md': '16px',
-            '--line-height-heading-md': '100%',
+            '--line-height-heading-md': 'auto',
             '--letter-spacing-heading-md': '0%',
 
             '--font-size-body-lg': '14px',

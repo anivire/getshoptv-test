@@ -25,14 +25,14 @@ const ToggleButton: FC<Props> = ({
   };
 
   return (
-    <div className="group-[toggle] bg-frost-gray flex w-full flex-row overflow-hidden rounded-[14px] p-[4px]">
+    <div className="group-[toggle] flex w-full flex-row overflow-hidden rounded-[14px] bg-frost-gray p-[4px]">
       <button
         onClick={() => handleSelectedButton()}
         className={classNames(
-          'text-heading-md w-full rounded-[10px] px-[37px] py-[10px] font-bold transition-colors duration-200 ease-in-out',
+          'w-full rounded-[5px] px-[19px] py-[5px] text-[12px] font-bold transition-colors duration-200 ease-in-out md:rounded-[6px] md:px-[37px] md:py-[10px] md:text-heading-md lg:rounded-[10px]',
           {
             'bg-black text-white': selectedButton === 0,
-            'text-slate-gray bg-transparent group-[toggle]:hover:text-white':
+            'bg-transparent text-slate-gray group-[toggle]:hover:text-white':
               selectedButton !== 0,
           }
         )}
@@ -42,10 +42,10 @@ const ToggleButton: FC<Props> = ({
       <button
         onClick={() => handleSelectedButton()}
         className={classNames(
-          'text-heading-md w-full rounded-[10px] px-[37px] py-[10px] font-bold transition-colors duration-200 ease-in-out',
+          'w-full rounded-[5px] px-[19px] py-[5px] text-[12px] font-bold transition-colors duration-200 ease-in-out md:rounded-[6px] md:px-[37px] md:py-[10px] md:text-heading-md lg:rounded-[10px]',
           {
             'bg-black text-white': selectedButton === 1,
-            'text-slate-gray bg-transparent group-[toggle]:hover:text-white':
+            'bg-transparent text-slate-gray group-[toggle]:hover:text-white':
               selectedButton !== 1,
           }
         )}

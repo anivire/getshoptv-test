@@ -5,11 +5,11 @@ export default function MonetizationToggle() {
   const [selectedButton, setSelectedButton] = useState<number>(0);
 
   return (
-    <section className="mx-auto w-full max-w-[1220px] justify-between md:flex md:flex-row md:gap-[80px] md:px-[40px] lg:grid lg:grid-cols-2 lg:px-0">
+    <section className="mx-auto flex w-full max-w-[1220px] flex-col justify-between gap-[22px] px-[16px] md:flex md:flex-row md:gap-[80px] md:px-[40px] lg:grid lg:grid-cols-2 lg:px-0">
       <h2 className="text-heading-base font-bold md:max-w-72 lg:max-w-md">
         Дополнительные источники выручки для разных компаний
       </h2>
-      <div className="flex flex-col md:gap-[16px] lg:gap-[32px]">
+      <div className="flex flex-col gap-[22px] md:gap-[16px] lg:gap-[32px]">
         <ToggleButton
           firstButtonTitle={'Операторам'}
           secondButtonTitle={'ОТТ сервисам'}
