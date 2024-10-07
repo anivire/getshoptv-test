@@ -1,11 +1,56 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ToggleButton from './shared/buttons/ToggleButton';
+import { useActiveSection } from '@/providers/ActiveSectionContext';
 
 export default function MonetizationToggle() {
   const [selectedButton, setSelectedButton] = useState<number>(0);
+  const { setActiveSection } = useActiveSection();
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        let topMostSectionId: string | null = null;
+        let topMostSectionY: number | null = null;
+
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const currentSectionTop = entry.boundingClientRect.top;
+
+            if (
+              topMostSectionId === null ||
+              currentSectionTop < topMostSectionY!
+            ) {
+              topMostSectionId = entry.target.id;
+              topMostSectionY = currentSectionTop;
+            }
+          }
+        });
+
+        if (topMostSectionId !== null) {
+          setActiveSection(topMostSectionId);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [setActiveSection]);
 
   return (
-    <section className="mx-auto flex w-full max-w-[1220px] flex-col justify-between gap-[22px] px-[16px] md:flex md:flex-row md:gap-[80px] md:px-[40px] lg:grid lg:grid-cols-2 lg:px-0">
+    <section
+      id="advantages"
+      ref={sectionRef}
+      className="mx-auto flex w-full max-w-[1220px] flex-col justify-between gap-[22px] px-[16px] md:flex md:flex-row md:gap-[80px] md:px-[40px] lg:grid lg:grid-cols-2 lg:px-0"
+    >
       <h2 className="text-heading-base font-bold md:max-w-72 lg:max-w-md">
         Дополнительные источники выручки для разных компаний
       </h2>

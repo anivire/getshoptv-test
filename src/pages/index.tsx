@@ -4,6 +4,7 @@ import MonetizationToggle from '@/components/MonetizationToggle';
 import Partners from '@/components/Partners';
 import Reports from '@/components/Reports';
 import RevenueOptimization from '@/components/RevenueOptimization';
+import { ActiveSectionProvider } from '@/providers/ActiveSectionContext';
 import { NextSeo } from 'next-seo';
 
 export default function Home() {

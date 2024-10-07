@@ -1,12 +1,54 @@
 import { useMediaQuery } from 'react-responsive';
 import ArrowTopRight from './shared/icons/ArrowTopRight';
 import LogoIcon from './shared/icons/LogoIcon';
+import { useActiveSection } from '@/providers/ActiveSectionContext';
+import { useEffect, useRef } from 'react';
 
 export default function RevenueOptimization() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+  const { setActiveSection } = useActiveSection();
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        let topMostSectionId: string | null = null;
+        let topMostSectionY: number | null = null;
+
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const currentSectionTop = entry.boundingClientRect.top;
+
+            if (
+              topMostSectionId === null ||
+              currentSectionTop < topMostSectionY!
+            ) {
+              topMostSectionId = entry.target.id;
+              topMostSectionY = currentSectionTop;
+            }
+          }
+        });
+
+        if (topMostSectionId !== null) {
+          setActiveSection(topMostSectionId);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [setActiveSection]);
 
   return (
-    <section className="relative">
+    <section id="work" ref={sectionRef} className="relative">
       <div className="absolute inset-0 -z-10 w-full self-center bg-frost-gray md:h-[471px] lg:h-[647px]" />
       <div className="relative mx-auto flex w-full max-w-[1220px] flex-col px-[16px] md:items-center md:gap-[60px] md:px-[40px] lg:items-center lg:gap-[80px] lg:px-0">
         <h2 className="text-heading-base font-bold md:max-w-lg md:text-center lg:max-w-full">

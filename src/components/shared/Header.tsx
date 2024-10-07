@@ -7,6 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useEffect, useRef, useState } from 'react';
 import Close from './icons/Close';
 import classNames from 'classnames';
+import { useActiveSection } from '@/providers/ActiveSectionContext';
 
 export default function Header() {
   const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
@@ -14,8 +15,8 @@ export default function Header() {
   const router = useRouter();
   const { query } = router;
   const isMobile = useMediaQuery({ query: '(max-width: 320px)' });
-
   const modalRef = useRef<HTMLDivElement>(null);
+  const { activeSection } = useActiveSection();
 
   const handleClickOutside = (event: MouseEvent) => {
     if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
@@ -80,7 +81,7 @@ export default function Header() {
           { 'shadow-default-shadow': isScrolled }
         )}
       >
-        <div className="mx-auto flex w-full max-w-[1220px] flex-row items-center justify-between px-[16px] py-7 md:px-[40px] lg:px-0">
+        <div className="mx-auto flex w-full max-w-[1220px] flex-row items-center justify-between px-[16px] py-4 md:px-[40px] lg:px-0">
           {!query.withLogo ? (
             <Logo />
           ) : isMobile ? (
@@ -92,13 +93,19 @@ export default function Header() {
           <div className="hidden items-center lg:inline-flex">
             <Link
               href="/"
-              className="px-8 py-[10px] text-button-base text-black hover:text-accent active:text-accent active:underline"
+              className={classNames(
+                'px-8 py-[10px] text-button-base text-black transition-colors duration-300 ease-in-out hover:text-accent active:text-accent active:underline',
+                { 'text-accent': activeSection === 'advantages' }
+              )}
             >
               Преимущества
             </Link>
             <Link
               href="/"
-              className="px-8 py-[10px] text-button-base text-black hover:text-accent active:text-accent active:underline"
+              className={classNames(
+                'px-8 py-[10px] text-button-base text-black transition-colors duration-300 ease-in-out hover:text-accent active:text-accent active:underline',
+                { 'text-accent': activeSection === 'work' }
+              )}
             >
               Как работаем
             </Link>
