@@ -46,6 +46,10 @@ export default function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    console.log(activeSection);
+  }, [activeSection]);
+
   return (
     <>
       {isModalOpened && (
@@ -62,14 +66,26 @@ export default function Header() {
           <Link
             href="/"
             onClick={() => setIsModalOpened(false)}
-            className="px-[32px] py-[10px] text-button-base font-bold text-black hover:text-accent active:text-accent active:underline"
+            className={classNames(
+              'px-[32px] py-[10px] text-button-base font-bold hover:text-accent active:text-accent active:underline',
+              {
+                'text-accent': activeSection === 'advantages',
+                'text-black': activeSection !== 'advantages',
+              }
+            )}
           >
             Преимущества
           </Link>
           <Link
             href="/"
             onClick={() => setIsModalOpened(false)}
-            className="px-[32px] py-[10px] text-button-base font-bold text-black hover:text-accent active:text-accent active:underline"
+            className={classNames(
+              'px-[32px] py-[10px] text-button-base font-bold hover:text-accent active:text-accent active:underline',
+              {
+                'text-accent': activeSection === 'work',
+                'text-black': activeSection !== 'work',
+              }
+            )}
           >
             Как работаем
           </Link>
@@ -94,8 +110,11 @@ export default function Header() {
             <Link
               href="/"
               className={classNames(
-                'px-8 py-[10px] text-button-base text-black transition-colors duration-300 ease-in-out hover:text-accent active:text-accent active:underline',
-                { 'text-accent': activeSection === 'advantages' }
+                'px-8 py-[10px] text-button-base transition-colors duration-300 ease-in-out hover:text-accent active:text-accent active:underline',
+                {
+                  'text-accent': activeSection === 'advantages',
+                  'text-black': activeSection !== 'advantages',
+                }
               )}
             >
               Преимущества
@@ -103,8 +122,11 @@ export default function Header() {
             <Link
               href="/"
               className={classNames(
-                'px-8 py-[10px] text-button-base text-black transition-colors duration-300 ease-in-out hover:text-accent active:text-accent active:underline',
-                { 'text-accent': activeSection === 'work' }
+                'px-8 py-[10px] text-button-base transition-colors duration-300 ease-in-out hover:text-accent active:text-accent active:underline',
+                {
+                  'text-accent': activeSection === 'work',
+                  'text-black': activeSection !== 'work',
+                }
               )}
             >
               Как работаем

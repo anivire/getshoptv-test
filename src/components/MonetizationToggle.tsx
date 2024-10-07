@@ -8,41 +8,43 @@ export default function MonetizationToggle() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        let topMostSectionId: string | null = null;
-        let topMostSectionY: number | null = null;
+    if (typeof window !== 'undefined') {
+      const observer = new IntersectionObserver(
+        entries => {
+          let topMostSectionId: string | null = null;
+          let topMostSectionY: number | null = null;
 
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const currentSectionTop = entry.boundingClientRect.top;
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const currentSectionTop = entry.boundingClientRect.top;
 
-            if (
-              topMostSectionId === null ||
-              currentSectionTop < topMostSectionY!
-            ) {
-              topMostSectionId = entry.target.id;
-              topMostSectionY = currentSectionTop;
+              if (
+                topMostSectionId === null ||
+                currentSectionTop < (topMostSectionY as number)
+              ) {
+                topMostSectionId = entry.target.id;
+                topMostSectionY = currentSectionTop;
+              }
             }
+          });
+
+          if (topMostSectionId !== null) {
+            setActiveSection(topMostSectionId);
           }
-        });
+        },
+        { threshold: 0.1 }
+      );
 
-        if (topMostSectionId !== null) {
-          setActiveSection(topMostSectionId);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
       if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+        observer.observe(sectionRef.current);
       }
-    };
+
+      return () => {
+        if (sectionRef.current) {
+          observer.unobserve(sectionRef.current);
+        }
+      };
+    }
   }, [setActiveSection]);
 
   return (
