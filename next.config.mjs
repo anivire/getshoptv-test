@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 export default {
-  reactStrictMode: true,
+  output: 'export',
+  distDir: 'out',
+  reactStrictMode: false,
 };
