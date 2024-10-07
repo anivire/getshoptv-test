@@ -20,25 +20,25 @@ const Burger: FC<Props> = ({ size }) => {
         height="42"
         rx="9"
         stroke="#FF5900"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <path
         d="M11.4783 14H33"
         stroke="#FF5900"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <path
         d="M11.4783 22H33"
         stroke="#FF5900"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <path
         d="M11.4783 30H33"
         stroke="#FF5900"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );
