@@ -10,10 +10,10 @@ export default function Home() {
     <main className="flex flex-col gap-[80px] md:gap-[120px] lg:gap-[180px]">
       <Hero />
       <MonetizationToggle />
-      {/* <RevenueOptimization /> */}
-      {/* <Partners /> */}
-      {/* <Reports /> */}
-      {/* <FeedbackForm /> */}
+      <RevenueOptimization />
+      <Partners />
+      <Reports />
+      <FeedbackForm />
     </main>
   );
 }
