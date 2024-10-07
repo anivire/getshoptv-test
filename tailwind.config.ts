@@ -22,7 +22,9 @@ const config: Config = {
         'mist-gray': '#E8EDEE',
         'frost-gray': '#F2F6F6',
       },
-
+      boxShadow: {
+        'default-shadow': '0 5px 5px rgba(164, 173, 172, 0.25)',
+      },
       fontSize: {
         'button-base': [
           '14px',

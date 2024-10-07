@@ -15,7 +15,9 @@ export default function Layout({
 }>) {
   return (
     <div style={onest.style}>
-      <Header />
+      <div className="pb-[100px]">
+        <Header />
+      </div>
       {children}
     </div>
   );
