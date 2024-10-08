@@ -2,8 +2,11 @@ import Link from 'next/link';
 import ButtonBlack from './shared/buttons/ButtonBlack';
 import { useState } from 'react';
 import classNames from 'classnames';
+import CheckBoxFill from './shared/icons/CheckBoxFill';
+import CheckBoxEmpty from './shared/icons/CheckBoxEmpty';
 
 export default function FeedbackForm() {
+  const [isChecked, setIsChecked] = useState<boolean>(false);
   const [userEmail, setUserEmail] = useState<string>('');
   const [question, setQuestion] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -61,17 +64,21 @@ export default function FeedbackForm() {
                   <p className="text-body-md text-error">{errorMessage}</p>
                 )}
               </div>
-              <p className="text-body-md">
-                Я ознакомлен(а) с{' '}
-                <Link href="/" className="underline">
-                  политикой конфиденциальности
-                </Link>{' '}
-                и согласен(на) на обработку{' '}
-                <Link href={'/'} className="underline">
-                  персональных данных
-                </Link>
-                .
-              </p>
+              <div className="flex flex-row items-start gap-3">
+                <button type="button" onClick={() => setIsChecked(!isChecked)}>
+                  {isChecked ? <CheckBoxFill /> : <CheckBoxEmpty />}
+                </button>
+                <p className="items-center text-body-md">
+                  Я ознакомлен(а) с{' '}
+                  <Link href="/" className="underline">
+                    политикой конфиденциальности
+                  </Link>{' '}
+                  и согласен(на) на обработку{' '}
+                  <Link href={'/'} className="underline">
+                    персональных данных.
+                  </Link>
+                </p>
+              </div>
             </div>
 
             <ButtonBlack type="submit" text="Отправить" />
